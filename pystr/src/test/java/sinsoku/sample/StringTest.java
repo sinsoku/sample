@@ -60,4 +60,21 @@ public class StringTest {
 
 		assertThat(actual, is(expected));
 	}
+
+	@Test
+	public void test_getBytes() throws Exception {
+		ArrayList<Byte> expected = new ArrayList<Byte>();
+		byte[] ebytes = {97, 98, 99};
+		for (Byte b : ebytes) {
+			expected.add(b);
+		}
+
+		ArrayList<Byte> actual = new ArrayList<Byte>();
+		byte[] bytes = "abc".getBytes();
+		for (Byte b : bytes) {
+			actual.add(b);
+		}
+
+		assertThat(actual, is(expected));
+	}
 }

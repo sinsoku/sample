@@ -53,5 +53,8 @@ class TestJString(object):
         eq_(jstr.codePointCount(0, 5), 5)
 
     def test_getChars(self):
-        dst = '012345'
-        eq_(JString('abc').getChars(0, 2, dst, 2), '01ab45')
+        eq_(JString('abc').getChars(0, 2, '012345', 2), '01ab45')
+
+    def test_getBytes(self):
+        eq_(JString(u'0z?!あ表').getBytes(), [48, 122, 63, 33, 12354, 34920])
+        eq_(JString(u'abc').getBytes(), [97, 98, 99])

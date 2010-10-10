@@ -23,3 +23,6 @@ class JString(object):
 
     def getChars(self, srcBegin, srcEnd, dst, dstBegin):
         return dst[0:dstBegin] + self.value[srcBegin:srcEnd] + dst[dstBegin + srcEnd - srcBegin:]
+
+    def getBytes(self):
+        return [ord(x) for x in self.value]
