@@ -58,3 +58,9 @@ class TestJString(object):
     def test_getBytes(self):
         eq_(JString(u'0z?!あ表').getBytes(), [48, 122, 63, 33, 12354, 34920])
         eq_(JString(u'abc').getBytes(), [97, 98, 99])
+
+    def test_equals(self):
+        ok_(JString('abc').equals('abc'))
+        ok_(not JString('abc').equals('abcd'))
+        ok_(JString(u'abcあ表').equals(u'abcあ表'))
+        ok_(not JString(u'abcあ表').equals(u'abcあ表d'))

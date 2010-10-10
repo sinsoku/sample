@@ -26,3 +26,6 @@ class JString(object):
 
     def getBytes(self):
         return [ord(x) for x in self.value]
+
+    def equals(self, str):
+        return self.value == str
