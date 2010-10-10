@@ -16,3 +16,9 @@ class TestJString(object):
     def test_init_JString_ustr(self):
         eq_(str(JString(u'')), '')
         eq_(str(JString(u'abc')), 'abc')
+
+    def test_charAt(self):
+        jstr = JString('abc')
+        eq_(jstr.charAt(0), 'a')
+        eq_(jstr.charAt(1), 'b')
+        eq_(jstr.charAt(2), 'c')

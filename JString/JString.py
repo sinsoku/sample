@@ -8,3 +8,6 @@ class JString(object):
 
     def __str__(self):
         return self.str
+
+    def charAt(self, index):
+        return self.str[index]
