@@ -3,6 +3,9 @@ package sinsoku.sample;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import org.junit.Test;
 
 
@@ -37,5 +40,24 @@ public class StringTest {
 		assertThat(str.codePointCount(0, 2), is(2));
 		assertThat(str.codePointCount(0, 3), is(3));
 		assertThat(str.codePointCount(0, 4), is(4));
+	}
+
+	@Test
+	public void test_getChars() throws Exception {
+		char[] dist = { '0', '1', '2', '3', '4', '5' };
+		"abc".getChars(0, 2, dist, 2);
+
+		Character[] cexpected = {'0', '1', 'a', 'b', '4', '5'};
+		ArrayList<Character> expected = new ArrayList<Character>();
+		for (Character c : cexpected) {
+			expected.add(c);
+		}
+
+		ArrayList<Character> actual = new ArrayList<Character>();
+		for (Character c : dist) {
+			actual.add(c);
+		}
+
+		assertThat(actual, is(expected));
 	}
 }

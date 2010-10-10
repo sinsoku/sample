@@ -51,3 +51,7 @@ class TestJString(object):
         eq_(jstr.codePointCount(0, 3), 3)
         eq_(jstr.codePointCount(0, 4), 4)
         eq_(jstr.codePointCount(0, 5), 5)
+
+    def test_getChars(self):
+        dst = '012345'
+        eq_(JString('abc').getChars(0, 2, dst, 2), '01ab45')

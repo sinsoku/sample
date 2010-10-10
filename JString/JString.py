@@ -20,3 +20,6 @@ class JString(object):
 
     def codePointCount(self, beginIndex, endIndex):
         return len(self.value[beginIndex:endIndex])
+
+    def getChars(self, srcBegin, srcEnd, dst, dstBegin):
+        return dst[0:dstBegin] + self.value[srcBegin:srcEnd] + dst[dstBegin + srcEnd - srcBegin:]
