@@ -28,4 +28,14 @@ public class StringTest {
 		assertThat(str.codePointBefore(5), is(12354));
 		assertThat(str.codePointBefore(6), is(34920));
 	}
+
+	@Test
+	public void test_codePointCount() throws Exception {
+		String str = "0z?!あ表";
+		assertThat(str.codePointCount(0, 0), is(0));
+		assertThat(str.codePointCount(0, 1), is(1));
+		assertThat(str.codePointCount(0, 2), is(2));
+		assertThat(str.codePointCount(0, 3), is(3));
+		assertThat(str.codePointCount(0, 4), is(4));
+	}
 }
