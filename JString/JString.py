@@ -11,3 +11,6 @@ class JString(object):
 
     def charAt(self, index):
         return self.str[index]
+
+    def codePointAt(self, index):
+        return ord(self.str[index])
