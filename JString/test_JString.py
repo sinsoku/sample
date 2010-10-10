@@ -79,3 +79,17 @@ class TestJString(object):
         # 文字列の長さが異なるパターン
         eq_(jstr.compareTo('ab'), 1)
         eq_(jstr.compareTo('abcdef'), -3)
+
+    def test_startsWith(self):
+        ok_(JString('abcdef').startsWith('ab'))
+        ok_(not JString('abcdef').startsWith('bc'))
+        ok_(JString('abc').startsWith(''))
+        # 大文字だと一致しない
+        ok_(not JString('abcdef').startsWith('Ab'))
+ 
+    def test_endsWith(self):
+        ok_(JString('abcdef').endsWith('ef'))
+        ok_(not JString('abcdef').endsWith('efg'))
+        ok_(JString('abc').endsWith(''))
+        # 大文字だと一致しない
+        ok_(not JString('abcdef').endsWith('eF'))

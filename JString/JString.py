@@ -43,3 +43,9 @@ class JString(object):
                 if length != 0:
                     return length
         return 0
+
+    def startsWith(self, prefix):
+        return self.value.startswith(prefix)
+
+    def endsWith(self, suffix):
+        return self.value.endswith(suffix)
