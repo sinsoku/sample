@@ -14,3 +14,6 @@ class JString(object):
 
     def codePointAt(self, index):
         return ord(self.str[index])
+
+    def codePointBefore(self, index):
+        return self.codePointAt(index - 1)
