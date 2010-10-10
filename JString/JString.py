@@ -29,3 +29,6 @@ class JString(object):
 
     def equals(self, str):
         return self.value == str
+
+    def equalsIgnoreCase(self, str):
+        return self.value.lower() == str.lower()

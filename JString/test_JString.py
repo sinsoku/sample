@@ -64,3 +64,8 @@ class TestJString(object):
         ok_(not JString('abc').equals('abcd'))
         ok_(JString(u'abcあ表').equals(u'abcあ表'))
         ok_(not JString(u'abcあ表').equals(u'abcあ表d'))
+
+    def test_equalsIgnoreCase(self):
+        ok_(JString('abc').equalsIgnoreCase('ABC'))
+        ok_(JString('aBc').equalsIgnoreCase('AbC'))
+        ok_(not JString('aBc').equalsIgnoreCase('aBcD'))
