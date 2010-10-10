@@ -69,3 +69,13 @@ class TestJString(object):
         ok_(JString('abc').equalsIgnoreCase('ABC'))
         ok_(JString('aBc').equalsIgnoreCase('AbC'))
         ok_(not JString('aBc').equalsIgnoreCase('aBcD'))
+
+    def test_compareTo(self):
+        jstr = JString('abc')
+        eq_(jstr.compareTo('abc'), 0)
+        eq_(jstr.compareTo('aac'), 1)
+        eq_(jstr.compareTo('acc'), -1)
+
+        # 文字列の長さが異なるパターン
+        eq_(jstr.compareTo('ab'), 1)
+        eq_(jstr.compareTo('abcdef'), -3)

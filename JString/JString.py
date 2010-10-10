@@ -32,3 +32,14 @@ class JString(object):
 
     def equalsIgnoreCase(self, str):
         return self.value.lower() == str.lower()
+
+    def compareTo(self, anotherString):
+        length = len(self.value) - len(anotherString)
+        if length != 0:
+            return length
+        else:
+            for n in range(len(self.value)):
+                length = ord(self.value[n]) - ord(anotherString[n])
+                if length != 0:
+                    return length
+        return 0

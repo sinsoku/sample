@@ -77,4 +77,12 @@ public class StringTest {
 
 		assertThat(actual, is(expected));
 	}
+
+	@Test
+	public void test_compare() throws Exception {
+		assertThat("abc".compareTo("abc"), is(0));
+		assertThat("abc".compareTo("abcdef"), is(-3));
+		assertThat("abc".compareTo("aac"), is(1));
+		assertThat("abc".compareTo("acc"), is(-1));
+	}
 }
