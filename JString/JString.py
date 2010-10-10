@@ -4,19 +4,19 @@
 class JString(object):
 
     def __init__(self, str=''):
-        self.str = str
+        self.value = str
 
     def __str__(self):
-        return self.str
+        return self.value
 
     def charAt(self, index):
-        return self.str[index]
+        return self.value[index]
 
     def codePointAt(self, index):
-        return ord(self.str[index])
+        return ord(self.value[index])
 
     def codePointBefore(self, index):
         return self.codePointAt(index - 1)
 
     def codePointCount(self, beginIndex, endIndex):
-        return len(self.str[beginIndex:endIndex])
+        return len(self.value[beginIndex:endIndex])
