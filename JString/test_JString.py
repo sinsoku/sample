@@ -42,3 +42,12 @@ class TestJString(object):
         eq_(jstr.codePointBefore(4), 33)
         eq_(jstr.codePointBefore(5), 12354)
         eq_(jstr.codePointBefore(6), 34920)
+
+    def test_codePointCount(self):
+        jstr = JString(u'0z?!あ表');
+        eq_(jstr.codePointCount(0, 0), 0)
+        eq_(jstr.codePointCount(0, 1), 1)
+        eq_(jstr.codePointCount(0, 2), 2)
+        eq_(jstr.codePointCount(0, 3), 3)
+        eq_(jstr.codePointCount(0, 4), 4)
+        eq_(jstr.codePointCount(0, 5), 5)

@@ -17,3 +17,6 @@ class JString(object):
 
     def codePointBefore(self, index):
         return self.codePointAt(index - 1)
+
+    def codePointCount(self, beginIndex, endIndex):
+        return len(self.str[beginIndex:endIndex])
