@@ -3,8 +3,8 @@
 
 class JString(object):
 
-    def __init__(self):
-        pass
+    def __init__(self, str=''):
+        self.str = str
 
     def __str__(self):
-        return ''
+        return self.str
